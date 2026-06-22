@@ -34,13 +34,13 @@ function Home() {
           <div className="hidden w-full lg:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/home"
                   className="justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-5"
                   aria-current="page"
                 >
                   Início
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-5">
@@ -48,9 +48,9 @@ function Home() {
                 </a>
               </li>
               <li>
-                <a href="#" className="justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-5">
+                <Link to="/loja" className="justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-5">
                   Produtos
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-5">
@@ -88,7 +88,7 @@ function Home() {
               <div className="flex lg:pl-[2rem] flex-col items-start w-full lg:flex-row gap-3 ">
                 <Link
                   to="/servicos"
-                  className="w-[90%] mx-auto lg:mx-0 lg:justify-start lg:w-44 h-12 relative bg-orange-500 rounded-[10px] text-center text-white text-base font-semibold font-['Inter'] leading-6 flex items-center justify-center"
+                  className="w-[90%] mx-auto lg:mx-0 lg:justify-center lg:w-44 h-12 relative bg-orange-500 rounded-[10px] text-center text-white text-base font-semibold font-['Inter'] leading-6 flex items-center justify-center"
                 >
                   Nossos Serviços
                 </Link>
@@ -177,7 +177,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className="py-[2.5rem] flex flex-col justify-items-center ">
+        <section className="flex flex-col items-center my-[1.5rem] lg:my-[5rem]">
           <div className="flex flex-col align-middle items-center pb-[2.5rem]">
             <h2 className="text-center justify-start text-slate-800 text-4xl font-bold font-['Inter'] leading-10">
               Produtos em Destaque
@@ -186,7 +186,7 @@ function Home() {
               Os melhores produtos para seu pet
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-4 lg:px-[5rem] gap-4 justify-items-center items-center ">
+          <div className="grid grid-cols-1 lg:grid-cols-4 lg:px-[5rem] gap-4 justify-center items-center">
             <div className="gap-[1rem] w-72 lg:w-68 self-stretch relative flex flex-col items-center align-middle shadow-lg bg-white rounded-2xl p-[1.5rem]">
               <img className="h-48 relative" src="/img/racao.webp" alt="" />
               <div>
@@ -221,7 +221,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-72 lg:w-68 self-stretch relative flex flex-col items-center align-middle shadow-lg bg-white rounded-2xl p-[1.5rem]">
+            <div className="gap-[1rem] w-72 lg:w-68 self-stretch relative flex flex-col items-center align-middle shadow-lg bg-white rounded-2xl p-[1.5rem]">
               <img className="h-48 relative" src="/img/caminha.jpg" alt="" />
               <div>
                 <h4 className="justify-start text-slate-800 text-lg font-bold font-['Inter'] leading-7">
@@ -240,7 +240,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-72 lg:w-68 self-stretch relative flex flex-col items-center align-middle shadow-lg bg-white rounded-2xl p-[1.5rem]">
+            <div className="gap-[1rem] w-72 lg:w-68 self-stretch relative flex flex-col items-center align-middle shadow-lg bg-white rounded-2xl p-[1.5rem]">
               <img className="h-48 relative" src="/img/coleira.jpg" alt="" />
               <div>
                 <h4 className="justify-start text-slate-800 text-lg font-bold font-['Inter'] leading-7">
@@ -275,15 +275,15 @@ function Home() {
               Oferecemos serviços completos de banho e tosa, atendimento veterinário, hotel para pets e uma loja com os
               melhores produtos do mercado.
             </p>
-            <div className="flex">
+            <div className="flex gap-2">
               <img src="/img/coracao.png" alt="" />
               <p>Amor e cuidado em cada atendimento</p>
             </div>
-            <div className="flex">
+            <div className="flex gap-2">
               <img src="/img/estrela.png" alt="" />
               <p>Profissionais qualificados</p>
             </div>
-            <div className="flex ">
+            <div className="flex gap-2">
               <img src="/img/patinha.png" alt="" />
               <p>Mais de 5.000 pets atendidos</p>
             </div>
