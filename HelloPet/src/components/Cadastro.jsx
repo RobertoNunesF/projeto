@@ -1,4 +1,46 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Cadastro() {
+  const [tipo, setTipo] = useState('cliente');
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmSenha, setConfirmSenha] = useState('');
+  const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(false);
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setErro('');
+    if (senha !== confirmSenha) {
+      setErro('As senhas não coincidem.');
+      return;
+    }
+    setCarregando(true);
+    fetch(`http://localhost:3000/usuarios?email=${encodeURIComponent(email)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setErro('Este e-mail já está cadastrado.');
+          setCarregando(false);
+          return;
+        }
+        return fetch('http://localhost:3000/usuarios', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, senha, tipo }),
+        })
+          .then(res => res.json())
+          .then(novoUsuario => {
+            localStorage.setItem('usuario', JSON.stringify(novoUsuario));
+            navigate(novoUsuario.tipo === 'funcionario' ? '/agenda' : '/perfil');
+          });
+      })
+      .catch(() => { setErro('Erro ao conectar com o servidor.'); setCarregando(false); });
+  }
+
   return (
     <section className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
@@ -12,7 +54,39 @@ function Cadastro() {
           Cadastre-se para cuidar do seu pet com a gente
         </p>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Tipo de usuário</label>
+            <div className="flex rounded-lg border border-gray-300 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setTipo('cliente')}
+                className={`flex-1 py-2 text-sm font-medium transition-colors ${
+                  tipo === 'cliente'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                Cliente
+              </button>
+              <button
+                type="button"
+                onClick={() => setTipo('funcionario')}
+                className={`flex-1 py-2 text-sm font-medium transition-colors border-l border-gray-300 ${
+                  tipo === 'funcionario'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                Funcionário
+              </button>
+            </div>
+          </div>
+
+          {erro && (
+            <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">{erro}</p>
+          )}
+
           <div>
             <label htmlFor="name" className="block mb-1 text-sm font-medium text-gray-700">
               Nome completo
@@ -20,6 +94,8 @@ function Cadastro() {
             <input
               type="text"
               id="name"
+              value={nome}
+              onChange={e => setNome(e.target.value)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
               placeholder="Seu nome"
               required
@@ -33,6 +109,8 @@ function Cadastro() {
             <input
               type="email"
               id="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
               placeholder="nome@exemplo.com"
               required
@@ -46,6 +124,8 @@ function Cadastro() {
             <input
               type="password"
               id="password"
+              value={senha}
+              onChange={e => setSenha(e.target.value)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
               placeholder="••••••••"
               required
@@ -59,6 +139,8 @@ function Cadastro() {
             <input
               type="password"
               id="confirm-password"
+              value={confirmSenha}
+              onChange={e => setConfirmSenha(e.target.value)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
               placeholder="••••••••"
               required
@@ -82,9 +164,10 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="w-full text-white bg-orange-500 hover:bg-orange-600 font-semibold rounded-[10px] text-sm px-5 py-2.5 text-center transition-colors"
+            disabled={carregando}
+            className={`w-full text-white font-semibold rounded-[10px] text-sm px-5 py-2.5 text-center transition-colors ${carregando ? 'bg-gray-300 cursor-not-allowed' : 'bg-orange-500 hover:bg-orange-600'}`}
           >
-            Criar conta
+            {carregando ? 'Criando conta...' : 'Criar conta'}
           </button>
 
           <p className="text-sm text-center text-gray-500">

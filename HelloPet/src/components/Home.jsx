@@ -35,7 +35,7 @@ function Home() {
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
               <li>
                 <Link
-                  to="/home"
+                  to="/"
                   className="justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-5"
                   aria-current="page"
                 >

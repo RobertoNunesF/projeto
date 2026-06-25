@@ -1,0 +1,239 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Roberto Nunes Ferreira",
+      "email": "rrobertonunesferreira@gmail.com",
+      "senha": "04142131",
+      "tipo": "cliente"
+    },
+    {
+      "id": 2,
+      "nome": "Cibele Zacher",
+      "email": "cibelezacher@hellopet.com",
+      "senha": "04142131",
+      "tipo": "funcionario"
+    }
+  ],
+  "pets": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "nome": "Shelby",
+      "especie": "Gato",
+      "raca": "Vira lata",
+      "idade": "6 meses",
+      "peso": "3kg",
+      "observacoes": ""
+    }
+  ],
+  "agendamentos": [
+    {
+      "id": 1,
+      "clienteNome": "Ana Silva",
+      "pet": "Luna",
+      "servicoId": "banho",
+      "servico": "Banho e Tosa",
+      "servicoIcon": "scissors",
+      "data": "2026-06-24",
+      "hora": "08:00",
+      "status": "Concluído"
+    },
+    {
+      "id": 2,
+      "clienteNome": "Carlos Mendes",
+      "pet": "Thor",
+      "servicoId": "vet",
+      "servico": "Veterinário",
+      "servicoIcon": "stethoscope",
+      "data": "2026-06-24",
+      "hora": "09:30",
+      "status": "Concluído"
+    },
+    {
+      "id": 3,
+      "clienteNome": "Maria Souza",
+      "pet": "Mel",
+      "servicoId": "hotel",
+      "servico": "Hotel Pet",
+      "servicoIcon": "home",
+      "data": "2026-06-24",
+      "hora": "11:00",
+      "status": "Em andamento"
+    },
+    {
+      "id": 4,
+      "clienteNome": "João Pedro",
+      "pet": "Bob",
+      "servicoId": "banho",
+      "servico": "Banho e Tosa",
+      "servicoIcon": "scissors",
+      "data": "2026-06-24",
+      "hora": "13:00",
+      "status": "Confirmado"
+    },
+    {
+      "id": 5,
+      "clienteNome": "Fernanda Lima",
+      "pet": "Mia",
+      "servicoId": "vet",
+      "servico": "Veterinário",
+      "servicoIcon": "stethoscope",
+      "data": "2026-06-24",
+      "hora": "14:30",
+      "status": "Confirmado"
+    },
+    {
+      "id": 6,
+      "clienteNome": "Lucas Rocha",
+      "pet": "Simba",
+      "servicoId": "banho",
+      "servico": "Banho e Tosa",
+      "servicoIcon": "scissors",
+      "data": "2026-06-24",
+      "hora": "15:30",
+      "status": "Aguardando"
+    },
+    {
+      "id": 7,
+      "clienteNome": "Patrícia Costa",
+      "pet": "Nina",
+      "servicoId": "loja",
+      "servico": "Retirar na Loja",
+      "servicoIcon": "bag",
+      "data": "2026-06-24",
+      "hora": "16:00",
+      "status": "Aguardando"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Ração Premium Cães Adultos",
+      "categoria": "alimentacao",
+      "descricao": "Ração balanceada para cães adultos de porte médio e grande, rica em proteínas.",
+      "preco": 89.9,
+      "imagem": "https://cobasi.vteximg.com.br/arquivos/ids/1082754/Racao-Premier-Formula-Caes-Adultos-Racas-Pequenas-Frango-1kg-lateral.webp?v=638906218514930000"
+    },
+    {
+      "id": 2,
+      "nome": "Ração Premium Gatos",
+      "categoria": "alimentacao",
+      "descricao": "Ração completa para gatos adultos com proteínas de alta qualidade.",
+      "preco": 74.9,
+      "imagem": "https://cobasi.vteximg.com.br/arquivos/ids/1083860-368-368/Racao-Royal-Canin-Super-Premium-Cat-para-Gatos-Adultos-Castrados.webp?v=638924324314830000"
+    },
+    {
+      "id": 3,
+      "nome": "Petisco Natural Cães",
+      "categoria": "alimentacao",
+      "descricao": "Petisco 100% natural, sem conservantes, ideal para treino e recompensa.",
+      "preco": 26.9,
+      "imagem": "https://down-br.img.susercontent.com/file/3a5482ee1d6026fbafd623fac7b7f526"
+    },
+    {
+      "id": 4,
+      "nome": "Brinquedo Corda Interativo",
+      "categoria": "brinquedos",
+      "descricao": "Corda de algodão trançado para brincadeiras interativas entre tutor e pet.",
+      "preco": 24.9,
+      "imagem": "https://petcroc.com/cdn/shop/products/S765e1526bc3d4ae395b58dcbcfd14ca6B.jpg?v=1738851084"
+    },
+    {
+      "id": 5,
+      "nome": "Brinquedo Kong Resistente",
+      "categoria": "brinquedos",
+      "descricao": "Brinquedo de borracha resistente, ideal para cães que adoram morder.",
+      "preco": 49.9,
+      "imagem": "https://itpetblog.com.br/wp-content/uploads/2019/08/kong-melhor-brinquedo.jpg"
+    },
+    {
+      "id": 6,
+      "nome": "Arranhador para Gatos",
+      "categoria": "brinquedos",
+      "descricao": "Arranhador vertical com corda de sisal e plataforma superior para descanso.",
+      "preco": 119.9,
+      "imagem": "https://agrobees.cdn.magazord.com.br/img/2024/03/produto/654/arranhador-para-gatos-poste-sisal-2-bases-brinquedo-bolinha-cinza-agrobees.png?ims=fit-in/800x"
+    },
+    {
+      "id": 7,
+      "nome": "Cama Ortopédica G",
+      "categoria": "acessorios",
+      "descricao": "Cama com espuma ortopédica de alta densidade, ideal para cães idosos.",
+      "preco": 189.9,
+      "imagem": "https://m.media-amazon.com/images/I/71Glb77vr1L.jpg"
+    },
+    {
+      "id": 8,
+      "nome": "Casinha de Madeira M",
+      "categoria": "acessorios",
+      "descricao": "Casinha em madeira tratada, tamanho médio, resistente às intempéries.",
+      "preco": 249.9,
+      "imagem": "https://images.tcdn.com.br/img/img_prod/554605/casinha_de_cachorro_de_madeira_pinus_n1_37_x_41_x_43_avipet_80473_1_274d463fb5b87c476178b58a2239499a.jpg"
+    },
+    {
+      "id": 9,
+      "nome": "Coleira Antipulgas",
+      "categoria": "coleiras",
+      "descricao": "Coleira com ação contínua antipulgas e carrapatos por até 8 meses.",
+      "preco": 32.9,
+      "imagem": "https://polipet.fbitsstatic.net/img/p/coleira-antipulgas-ectofend-65cm-para-caes-machos-g-102399/296486-1.jpg?w=350&h=350&v=202512230946"
+    },
+    {
+      "id": 10,
+      "nome": "Shampoo Hidratante",
+      "categoria": "saude-higiene",
+      "descricao": "Shampoo com aloe vera e vitamina E, para pelo macio e brilhante.",
+      "preco": 32.5,
+      "imagem": "https://cdn.awsli.com.br/2571/2571340/produto/212104999/sh-banhex-macadamia-500ml-qjnyrs.jpg"
+    },
+    {
+      "id": 11,
+      "nome": "Ração Natural Pet",
+      "categoria": "alimentacao",
+      "descricao": "Ração natural com ingredientes frescos, sem corantes nem conservantes.",
+      "preco": 38.9,
+      "imagem": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR-fntBGbQopvRSBxVmEsH6_etY5_PVLaUeva3WFo6X6jkwtTc_eIxQWceJBumdIfEZUEcwsI2qJmZpksFUUtLzG1ECJtIOywnFi7ONQeSxpo1swWYb4-cdeA"
+    },
+    {
+      "id": 12,
+      "nome": "Coleira Fofinha Couro P",
+      "categoria": "coleiras",
+      "descricao": "Coleira em couro legítimo com acabamento premium, tamanho pequeno.",
+      "preco": 65.9,
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJMA9ZQCnWBcDDWK4L_FZyPW1sdacxXzR_UA&s"
+    },
+    {
+      "id": 13,
+      "nome": "Guia Retrátil 5m",
+      "categoria": "acessorios",
+      "descricao": "Guia retrátil com trava de segurança e alça ergonômica, suporta até 25kg.",
+      "preco": 79.9,
+      "imagem": "https://images.tcdn.com.br/img/img_prod/1100448/guia_retratil_flexi_m_new_classic_fita_5m_para_caes_de_ate_25kg_2553_1_691cd4cd9934d55f16b0e1e5c4925c3a.jpg"
+    },
+    {
+      "id": 14,
+      "nome": "Mochila Transportadora",
+      "categoria": "acessorios",
+      "descricao": "Mochila ventilada para transporte de pets de até 7kg com janela panorâmica.",
+      "preco": 159.9,
+      "imagem": "https://images.tcdn.com.br/img/img_prod/438510/mochila_cabana_bolsa_transporte_passeio_para_caes_e_gatos_porte_pequeno_kala_14011_2_7600887599e1cf8ea96847bf14f5fb96.jpg"
+    },
+    {
+      "id": 15,
+      "nome": "Bebedouro Fonte 2L",
+      "categoria": "acessorios",
+      "descricao": "Fonte com filtro de carvão ativo, mantém a água fresca e limpa o dia todo.",
+      "preco": 129.9,
+      "imagem": "https://d1s5vnzdzzk6v7.cloudfront.net/Custom/Content/Products/12/16/121604_fonte-bebedouro-de-agua-para-gatos-18l-transparente_m4_638387508099697996.webp"
+    },
+    {
+      "id": 16,
+      "nome": "Capa de Chuva P",
+      "categoria": "acessorios",
+      "descricao": "Capa de chuva impermeável com capuz, tamanho pequeno, fácil de vestir.",
+      "preco": 44.9,
+      "imagem": "https://m.media-amazon.com/images/I/61tngXFU7XL._AC_UF1000,1000_QL80_.jpg"
+    }
+  ]
+}
